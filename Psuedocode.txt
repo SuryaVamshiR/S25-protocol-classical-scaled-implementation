@@ -1,0 +1,52 @@
+
+START PROGRAM
+
+DEFINE constants:
+    - n = total file size
+    - n1 = subset of positions used for message storage
+    - a = empty array to store file data
+
+FUNCTION Initialize_File():
+    FOR each index in file:
+        Assign random value between 0 and 3
+    PRINT "File generated"
+
+FUNCTION Compute_Distance(state1, state2):
+    Initialize distance counter = 0
+    FOR each bit in state:
+        Compute absolute difference mod 4
+        Add to distance counter
+    RETURN distance value
+
+FUNCTION Store_Message_Positions(message, search_file):
+    Initialize position storage array
+    FOR each location in file:
+        IF a matching sequence is found:
+            Store position in array
+    RETURN array of stored positions
+
+FUNCTION Cascading_Reduction():
+    Set trial count = 0
+    WHILE trials < 100:
+        Select a random message from the file
+        Extract all instances of message and store positions
+        Begin collapsing rounds:
+            - Choose a random valid position
+            - Extract next message segment
+            - Compare against valid LRMs
+            - Apply filtering rules to refine valid positions
+        IF converged to a single valid state:
+            EXIT cascade loop
+
+FUNCTION Message_Decryption():
+    Apply LRM-based matching to reconstruct closest valid message
+    Append distance marker to refine reconstruction accuracy
+    RETURN final decrypted message
+
+EXECUTE:
+    Initialize_File()
+    Perform message exchange sequence using Cascading_Reduction()
+    Apply decryption logic to obtain final result
+
+END PROGRAM
+

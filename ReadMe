@@ -1,0 +1,12 @@
+Project overview-
+This project implements a cascade-based symbolic communication protocol with attacker simulation through MMI injections. It uses custom-defined LRM dictionaries to establish semantic ambiguity and resistance against partial key access.
+File descriptions-
+- `main.py`: Orchestrates the cascade protocol using modular components.
+- `initial_setup.py`: Generates the initial symbol stream, message, and attacker configurations.
+- `cascade_round.py`: Runs a single cascade iteration including message selection and state updates.
+- `lrm.py`: Defines and processes the Language Redefiner Module (LRM) dictionary.
+- `attacker.py`: Handles attacker message injections based on MMI logic.
+- `utils.py`: Contains helper functions for matching, distance calculations, and file parsing.
+How to run-
+To run the cascade:
+$ python main.py
